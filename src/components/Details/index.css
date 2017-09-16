@@ -1,0 +1,16 @@
+.product-detail {
+  width: 80%;
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail .detail-image {
+  width: 80%;
+  border-radius: 5px;
+}
+
+.product-detail span {
+  width: 80%;
+  margin-top: 1em;
+}

@@ -1,5 +1,10 @@
+// Dependencies
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+// Externals
 import data from '../../assets/data/data'
+// Internals
+import './index.css'
 
 class Details extends Component {
   constructor(props){
@@ -15,7 +20,6 @@ class Details extends Component {
 
   componentDidMount(){
     const id = this.props.match.params.id
-    console.log(data[id - 1])
     this.setState({
       id: id,
       title: data[id - 1].title,
@@ -23,18 +27,17 @@ class Details extends Component {
       img_large: data[id - 1].img_large,
       price: data[id - 1].price,
     })
-    console.log(id)
-    console.log(this.state)
   }
 
   render() {
     return (
-      <div className="product">
-        <img alt={this.state.title} src={this.state.img_large} />
+      <div className="product-detail">
+        <img className="detail-image" alt={this.state.title} src={this.state.img_large} />
         <span className="description">
           {this.state.description}
         </span>
         <span className="price">Price: {this.state.price}</span>
+        <Link className="back" to={`/`}>All Products</Link>
       </div>
     )
   }
